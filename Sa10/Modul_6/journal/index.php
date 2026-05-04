@@ -45,12 +45,20 @@
 <body>
 
 <?php 
-  $filename = date("Y-m-d") . ".txt";
-  $text = "Was ist heute passiert?";
-  if(file_exists($filename)){
-    $myfile = fopen($filename, "r") or die("Error: Unable to open file!");
-    $text = fread($myfile, filesize($filename));
+  function get_file_text() {
+    $filename = date("Y-m-d") . ".txt";
+    $text = "Was ist heute passiert?";
+    if(file_exists($filename)){
+      $myfile = fopen($filename, "r") or die("Error: Unable to open file!");
+      $text = fread($myfile, filesize($filename));
+    }
+    return $text;
   }
+
+  function get_dir_list() {
+    return scandir("./");
+  }
+
 ?>
 
 <h1>Tagebuch</h1>
@@ -61,18 +69,31 @@
 
 <br>
 
-<form method="post" action="save.php">
+<div class="container">
+
+  <ul>
+    <?php foreach (scandir("./") as $file): ?>
+        <?php if ($file !== "." && $file !== ".."): ?>
+            <li><?= htmlspecialchars($file) ?></li>
+        <?php endif; ?>
+    <?php endforeach; ?>
+  </ul>
+
+  <form method="post" action="save.php">
 
     <textarea name="text">
-      <?php echo $text; ?>
+      <?php echo get_file_text(); ?>
     </textarea>
     
     <br>
 
     <button type="submit" name="send">
-        Absenden
+        Speichern
     </button>
 </form>
+</div>
+
+
 
 </body>
 </html>
