@@ -4,7 +4,8 @@ $links = [
   ['name' => 'About', 'url' => 'about.php'],
   ['name' => 'Contact', 'url' => 'contact.php'],
   ['name' => 'Signup', 'url' => 'signup.php'],
-  ['name' => 'Login', 'url' => 'login.php']
+  ['name' => 'Login', 'url' => 'login.php'],
+  ['name' => 'Logout', 'url' => 'logout.php']
 ];
 ?>
 

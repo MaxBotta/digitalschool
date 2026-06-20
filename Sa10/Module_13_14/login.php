@@ -1,3 +1,11 @@
+<?php
+include_once 'config.php';
+
+if (isset($_SESSION['email'])) {
+  header('Location: dashboard.php');
+}
+?>
+
 <?php include_once 'head.php'; ?>
 
 <body class="container">

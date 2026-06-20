@@ -1,4 +1,7 @@
 <?php
+
+  session_start();
+
   $servername = "localhost";
   $username = "root";
   $password = "";
@@ -10,4 +13,3 @@
     die("Could not connect. " . $e->getMessage());
   }
 ?>
-

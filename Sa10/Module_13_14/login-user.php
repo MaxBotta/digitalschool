@@ -30,11 +30,12 @@ if (isset($_POST['submit'])) {
   $user_password = $user['password'];
 
   // Vergleiche Passwörter
-  if(password_verify($password, $user_password)) {
+  if (password_verify($password, $user_password)) {
     echo 'Login erfolgreich';
+    $_SESSION['email'] = $email;
+    header('Location: dashboard.php');
   } else {
     echo 'Falsches Passwort';
-
+    header('refresh:2; url=login.php');
   }
-  
 }
