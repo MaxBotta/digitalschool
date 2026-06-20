@@ -9,6 +9,7 @@
       <!-- <img src="./images/login.jpg" alt="login image" class="w-full"> -->
     </div>
     <div class="signup">
+
       <form action="register-user.php" method="POST">
         <label for="firstname">Firstname</label>
         <input placeholder="firstname" name="firstname" id="firstname" required>

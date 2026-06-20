@@ -1,4 +1,5 @@
 <?php 
+  // Mit Datenbank verbinden
   include_once 'config.php';
 
   // Nutzer hat form ausgefüllt und abgeschickt
@@ -13,6 +14,7 @@
       return;
     }
 
+    // Finde alle Nutzer mit der eingegebenen Email
     $sql = 'SELECT email FROM users WHERE email=:email';
 
     $tempSQL = $conn->prepare($sql);
