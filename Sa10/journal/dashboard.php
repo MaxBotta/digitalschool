@@ -18,3 +18,5 @@ include_once 'head.php';
   <?php echo 'Willkommen auf dem Dashboard, ' . $_SESSION['email'] . '!'; ?>
 
 </body>
+
+</html>
